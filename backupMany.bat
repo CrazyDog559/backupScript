@@ -63,6 +63,12 @@ if errorlevel 1 (
     exit /b 11
 )
 
+REM Enable NTFS compression on the new backup folder
+echo Enabling compression...
+compact /C "%DEST%" /I /Q >nul
+
+
+
 
 REM ------------------------------------------------------------
 REM START LOG
@@ -158,7 +164,7 @@ REM ------------------------------------------------------------
 REM GET SOURCE FOLDER NAME
 REM
 REM Example:
-REM C:\Users\drewk\Downloads
+REM C:\Users\Downloads
 REM becomes:
 REM Downloads
 REM ------------------------------------------------------------
